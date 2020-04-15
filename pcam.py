@@ -52,5 +52,7 @@ class PCAM(nn.Module):
         x_out21 = x_out2.permute(0,3,2,1).contiguous()
         if not self.no_spatial:
             x_out = self.SpatialGate(x)
-        x_out = x_out + x_out11 + x_out21
+            x_out = 1/3 * (x_out + x_out11 + x_out21)
+        else:
+            x_out = 1/2 * (x_out11 + x_out21)
         return x_out
