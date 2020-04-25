@@ -15,3 +15,9 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 <p>
     <em>Figure 2. Spatial Gate of PCAM</em>
 </p>
+
+## Pretrained Models:
+
+|Model|Top-1 Error|Top-5 Error|Weights|
+|:---:|:---:|:---:|:---:|
+|ResNet-50 + PCAM|**22.662%**|**6.478%**|[Google Drive](https://drive.google.com/file/d/1wjQgkdqkUhnk_USq9e_fDwy62s64_Sq-/view)|
