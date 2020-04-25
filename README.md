@@ -18,6 +18,6 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 
 ## Pretrained Models:
 
-|Model|Top-1 Error|Top-5 Error|Weights|
+|Model|Parameters|GFLOPs|Top-1 Error|Top-5 Error|Weights|
 |:---:|:---:|:---:|:---:|
-|ResNet-50 + PCAM|**22.662%**|**6.478%**|[Google Drive](https://drive.google.com/file/d/1wjQgkdqkUhnk_USq9e_fDwy62s64_Sq-/view)|
+|ResNet-50 + PCAM (k = 7)|25.56|4.169|**22.662%**|**6.478%**|[Google Drive](https://drive.google.com/file/d/1wjQgkdqkUhnk_USq9e_fDwy62s64_Sq-/view)|
