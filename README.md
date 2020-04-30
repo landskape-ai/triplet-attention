@@ -16,6 +16,11 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
     <em>Figure 2. Spatial Gate of PCAM</em>
 </p>
 
+<div style="text-align:center"><img src ="figures/PCAM(k=3).png"  width="350"/></div>
+<p>
+    <em>Figure 3. Training Curve of ResNet-50 + PCAM (k=3) on ImageNet Classification.</em>
+</p>
+
 ## Pretrained Models:
 
 |Model|Parameters|GFLOPs|Top-1 Error|Top-5 Error|Weights|
