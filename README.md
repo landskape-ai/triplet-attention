@@ -16,10 +16,14 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
     <em>Figure 2. Spatial Gate of PCAM</em>
 </p>
 
-<div style="text-align:center"><img src ="figures/PCAM(k=3).png"  width="350"/></div>
-<p>
-    <em>Figure 3. Training Curve of ResNet-50 + PCAM (k=3) on ImageNet Classification.</em>
+<p float="left">
+  <img src ="figures/PCAM(k=3).png"  width="350"/>
+  <img src ="figures/featuremap.png"  width="500"/>
 </p>
+<p>
+    <em>Figure 3. From left to right:  a) Training Curve of ResNet-50 + PCAM (k=3) on ImageNet Classification. b) Feature Maps comparison for pretrained Vanilla ResNet-50 and pretrained ResNet-50 + PCAM (k = 3). </em>
+</p>
+
 
 ## Pretrained Models:
 
