@@ -36,7 +36,7 @@ class SpatialGate(nn.Module):
         return x * scale
 
 class PCAM(nn.Module):
-    def __init__(self, gate_channels, reduction_ratio=16, pool_types=['avg', 'max'], no_spatial=False):
+    def __init__(self, gate_channels, no_spatial=False):
         super(PCAM, self).__init__()
         self.ChannelGateH = SpatialGate()
         self.ChannelGateW = SpatialGate()
