@@ -21,7 +21,7 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
   <img src ="figures/featuremap.png"  width="500"/>
 </p>
 <p>
-    <em>Figure 3. From left to right:  a) Training Curve of ResNet-50 + PCAM (k=3) on ImageNet Classification. b) Feature Maps comparison for pretrained Vanilla ResNet-50 and pretrained ResNet-50 + PCAM (k = 3). </em>
+    <em>Figure 3. From left to right:  a) Training Curve of ResNet-50 + PCAM (k = 7) on ImageNet Classification. b) Feature Maps comparison for pretrained Vanilla ResNet-50 and pretrained ResNet-50 + PCAM (k = 7). </em>
 </p>
 
 
