@@ -40,7 +40,4 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 
 |Model|Parameters|GFLOPs|Top-1 Error|Top-5 Error|Weights|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|ResNet-50 + PCAM (k = 7)|25.56 M|4.169|**22.662%**|**6.478%**|[Google Drive](https://drive.google.com/file/d/1wjQgkdqkUhnk_USq9e_fDwy62s64_Sq-/view)|
-|ResNet-50 + PCAM (k = 7)<sup>*</sup>|25.56 M|4.169|**22.52%**|**6.326%**|[Google Drive](https://drive.google.com/file/d/1UX3q8gaherNJMhsd20vsgPjLXUIbZdKS/view?usp=sharing)|
-
-<sup>*</sup> Model was trained for 98 epochs. 
+|ResNet-50 + PCAM (k = 7)|25.56 M|4.169|**22.52%**|**6.326%**|[Google Drive](https://drive.google.com/open?id=1ptKswHzVmULGbE3DuX6vMCjEbqwUvGiG)|
