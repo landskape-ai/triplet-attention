@@ -41,7 +41,7 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
   <img src ="figures/husky.png"  width="1000"/>
 </p>
 <p>
-    <em>Figure 4. Feature Maps comparison for pretrained Vanilla ResNet-50 (left) and pretrained ResNet-50 + PCAM (k = 7) (right). </em>
+    <em>Figure 5. GradCAM and GradCAM++ comparisons for ResNet-50 based on sample images from ImageNet dataset. </em>
 </p>
 
 
