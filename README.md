@@ -35,6 +35,15 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
     <em>Figure 4. Feature Maps comparison for pretrained Vanilla ResNet-50 (left) and pretrained ResNet-50 + PCAM (k = 7) (right). </em>
 </p>
 
+<p float="left">
+  <img src ="figures/warcraft.png"  width="300"/>
+    <br>
+  <img src ="figures/husky.png"  width="300"/>
+</p>
+<p>
+    <em>Figure 4. Feature Maps comparison for pretrained Vanilla ResNet-50 (left) and pretrained ResNet-50 + PCAM (k = 7) (right). </em>
+</p>
+
 
 ## Pretrained Models:
 
