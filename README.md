@@ -6,34 +6,15 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 
 † - Denotes Equal Contribution
 
-<div style="text-align:center"><img src ="figures/pbam.png"  width="1000"/></div>
-<p>
-    <em>Figure 1. The Proposed Permuted Convolution Attention Module (PCAM)</em>
-</p>
-
-<div style="text-align:center"><img src ="figures/spatial.png"  width="1000"/></div>
-<p>
-    <em>Figure 2. Spatial Gate of PCAM</em>
-</p>
-
 <p float="left">
-  <img src ="figures/pcam(k=7).png"  width="350"/>
+  <img src ="figures/Slide1.PNG"  width="170"/>
+  <img src ="figures/Slide2.PNG"  width="170"/>
+  <img src ="figures/rubix.png"  width="550"/>
 </p>
 <p>
-    <em>Figure 3. Training Curve of ResNet-50 + PCAM (k = 7) on ImageNet Classification. </em>
+    <em>Figure 1. (a). Squeeze Excitation Block. (b). Convolution Block Attention Module (CBAM) (Note - GMP denotes - Global Max Pooling). (c). Rubix Attention (ours). </em>
 </p>
 
-
-<p float="left">
-  <img src ="figures/Vanilla_maps_small.png"  width="300"/>
-   &emsp;
-    &emsp;
-    &emsp;
-  <img src ="figures/PCAM_maps_small.png"  width="300"/>
-</p>
-<p>
-    <em>Figure 4. Feature Maps comparison for pretrained Vanilla ResNet-50 (left) and pretrained ResNet-50 + PCAM (k = 7) (right). </em>
-</p>
 
 <p float="left">
   <img src ="figures/warcraft.png"  width="1000"/>
@@ -41,7 +22,7 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
   <img src ="figures/husky.png"  width="1000"/>
 </p>
 <p>
-    <em>Figure 5. GradCAM and GradCAM++ comparisons for ResNet-50 based on sample images from ImageNet dataset. </em>
+    <em>Figure 2. GradCAM and GradCAM++ comparisons for ResNet-50 based on sample images from ImageNet dataset. </em>
 </p>
 
 
