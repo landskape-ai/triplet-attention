@@ -1,4 +1,4 @@
-# Rubix Attention
+# Rotate to Attend
 
 Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay Uppili Arasanipalai <sup>1,3†</sup>, Qibin Hou <sup>4</sup>
 
