@@ -12,7 +12,7 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
   <img src ="figures/rubix.png"  width="530"/>
 </p>
 <p>
-    <em>Figure 1. (a). Squeeze Excitation Block. (b). Convolution Block Attention Module (CBAM) (Note - GMP denotes - Global Max Pooling). (c). Rubix Attention (ours). </em>
+    <em>Figure 1. (a). Squeeze Excitation Block. (b). Convolution Block Attention Module (CBAM) (Note - GMP denotes - Global Max Pooling). (c). Permuted Convolution Attention Module (PCAM) (ours). </em>
 </p>
 
 
