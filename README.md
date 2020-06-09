@@ -1,7 +1,7 @@
 # Triplet Attention
 
 <p float="left">
-  <img src ="figures/pipeline.png"  width="1000"/>
+  <img src ="figures/triplet.png"  width="1000"/>
 </p>
 
 Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay Uppili Arasanipalai <sup>1,3†</sup>, Qibin Hou <sup>4</sup>
