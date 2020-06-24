@@ -10,6 +10,8 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 
 † - Denotes Equal Contribution
 
+*Abstract - Benefiting from the capability of building inter-dependencies among channels or spatial locations, attention mechanisms have been extensively studied and broadly used in a variety of computer vision tasks recently. In this paper, we investigate light-weight but effective attention mechanisms and present **triplet attention**, a novel method for computing attention weights by capturing cross dimension interaction using a three branch structure. For an input tensor, triplet attention builds inter-dimensional dependencies by the rotation operation followed by residual transformations and encodes inter-channel and spatial information with negligible computational overhead. Our method is simple as well as efficient and can be easily plugged into classic backbone networks as an add-on module. We demonstrate the effectiveness of our method on various challenging tasks including image classification on ImageNet-1k and object detection on MSCOCO and PASCAL VOC datasets. Furthermore, we provide extensive insight into the performance of triplet attention by visually inspecting the GradCAM and GradCAM++ results. The empirical evaluation of our methods support our intuitionon on the importance of capturing dependencies across dimensions when computing attention weights.*
+
 <p float="left">
   <img src ="figures/comp.png"  width="1000"/>
 </p>
