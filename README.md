@@ -21,8 +21,6 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 
 
 <p float="left">
-  <img src ="figures/grad.png"  width="1000"/>
-  &emsp;
   <img src ="figures/grad1.jpg"  width="1000"/>
 </p>
 <p>
