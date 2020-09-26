@@ -44,7 +44,9 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 
 ### MS-COCO:
 
-#### Object Detection:
+#### Detectron2:
+
+##### Object Detection:
 
 |Backbone|Detectors|AP|AP<sub>50</sub>|AP<sub>75</sub>|AP<sub>S</sub>|AP<sub>M</sub>|AP<sub>L</sub>|Weights|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -52,13 +54,13 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 |ResNet-50 + Triplet Attention (k = 7)|RetinaNet|**38.2**|**58.5**|**40.4**|**23.4**|**42.1**|**48.7**|[Google Drive](https://drive.google.com/file/d/1Wo-l_84xxuRwB2EMBJUxCLw5mhc8aAgI/view?usp=sharing)|
 |ResNet-50 + Triplet Attention (k = 7)|Mask RCNN|**39.8**|**61.6**|**42.8**|**24.3**|**42.9**|**51.3**|[Google Drive](https://drive.google.com/file/d/18hFlWdziAsK-FB_GWJk3iBRrtdEJK7lf/view?usp=sharing)|
 
-#### Instance Segmentation
+##### Instance Segmentation
 
 |Backbone|Detectors|AP|AP<sub>50</sub>|AP<sub>75</sub>|AP<sub>S</sub>|AP<sub>M</sub>|AP<sub>L</sub>|Weights|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |ResNet-50 + Triplet Attention (k = 7)|Mask RCNN|**35.8**|**57.8**|**38.1**|**18**|**38.1**|**50.7**|[Google Drive](https://drive.google.com/file/d/18hFlWdziAsK-FB_GWJk3iBRrtdEJK7lf/view?usp=sharing)|
 
-#### Person Keypoint Detection
+##### Person Keypoint Detection
 
 |Backbone|Detectors|AP|AP<sub>50</sub>|AP<sub>75</sub>|AP<sub>M</sub>|AP<sub>L</sub>|Weights|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -69,3 +71,11 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 |Backbone|Detectors|AP|AP<sub>50</sub>|AP<sub>75</sub>|AP<sub>S</sub>|AP<sub>M</sub>|AP<sub>L</sub>|Weights|
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |ResNet-50 + Triplet Attention (k = 7)|Keypoint RCNN|**54.8**|**83.1**|**59.9**|**37.4**|**61.9**|**72.1**|[Google Drive]()|
+
+#### MMDetection:
+
+##### Object Detection:
+
+|Backbone|Detectors|AP|AP<sub>50</sub>|AP<sub>75</sub>|AP<sub>S</sub>|AP<sub>M</sub>|AP<sub>L</sub>|Weights|
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+|ResNet-50 + Triplet Attention (k = 7)|Faster R-CNN|**39.3**|**60.8**|**42.7**|**23.4**|**42.8**|**50.3**|[Google Drive](https://drive.google.com/file/d/1TcLp5YD8_Bb2xwU8b05d0x7aja21clSU/view?usp=sharing)|
