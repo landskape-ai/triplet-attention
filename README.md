@@ -1,6 +1,11 @@
 # Triplet Attention
 
 <p float="left">
+  <a href="https://arxiv.org/abs/2010.03045" alt="ArXiv">
+        <img src="https://img.shields.io/badge/Preprint-arXiv-blue.svg" /></a>
+</p>
+
+<p float="left">
   <img src ="figures/triplet.png"  width="1000"/>
 </p>
 
