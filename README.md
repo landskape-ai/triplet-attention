@@ -49,6 +49,8 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 
 ### MS-COCO:
 
+*All models are trained with 1x learning schedule.*
+
 #### Detectron2:
 
 ##### Object Detection:
