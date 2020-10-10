@@ -88,3 +88,14 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |ResNet-50 + Triplet Attention (k = 7)|Faster R-CNN|**39.3**|**60.8**|**42.7**|**23.4**|**42.8**|**50.3**|[Google Drive](https://drive.google.com/file/d/1TcLp5YD8_Bb2xwU8b05d0x7aja21clSU/view?usp=sharing)|
 |ResNet-50 + Triplet Attention (k = 7)|RetinaNet|**37.6**|**57.3**|**40.0**|**21.7**|**41.1**|**49.7**|[Google Drive](https://drive.google.com/file/d/13glVC6eGbwTJl37O8BF4n5aAT9dhszuh/view?usp=sharing)|
+
+```
+@misc{misra2020rotate,
+      title={Rotate to Attend: Convolutional Triplet Attention Module}, 
+      author={Diganta Misra and Trikay Nalamada and Ajay Uppili Arasanipalai and Qibin Hou},
+      year={2020},
+      eprint={2010.03045},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
