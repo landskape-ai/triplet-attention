@@ -26,7 +26,7 @@ class ZPool(nn.Module):
 class AttentionGate(nn.Module):
     def __init__(self):
         super(AttentionGate, self).__init__()
-        kernel_size = 3
+        kernel_size = 7
         self.compress = ZPool()
         self.conv = BasicConv(2, 1, kernel_size, stride=1, padding=(kernel_size-1) // 2, relu=False)
     def forward(self, x):
