@@ -3,7 +3,12 @@
 <p float="left">
   <a href="https://arxiv.org/abs/2010.03045" alt="ArXiv">
         <img src="https://img.shields.io/badge/Preprint-arXiv-blue.svg" /></a>
+  <a href="" alt="Publication">
+          <img src="https://img.shields.io/badge/WACV-2021-red.svg" /></a>
+  <a href="https://landskapeai.github.io/publication/triplet/" alt="Publication">
+          <img src="https://img.shields.io/badge/Project-Website-green.svg" /></a>
 </p>
+
 
 <p float="left">
   <img src ="figures/triplet.png"  width="1000"/>
