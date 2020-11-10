@@ -1,4 +1,4 @@
-# Triplet Attention
+# Rotate to Attend: Convolutional Triplet Attention Module
 
 <p float="left">
   <a href="https://arxiv.org/abs/2010.03045" alt="ArXiv">
@@ -37,6 +37,16 @@ Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay
 </p>
 
 *For generating GradCAM and GradCAM++ results, please follow the code on this [repository](https://github.com/1Konny/gradcam_plus_plus-pytorch).*
+
+<details>
+  <summary>Changelogs/ Updates: (Click to expand)</summary>
+  
+  * [05/11/20] v2 of our paper is out on [arXiv](https://arxiv.org/abs/2010.03045).
+  * [02/11/20] Our paper is accepted to [WACV 2021](http://wacv2021.thecvf.com/home).
+  * [06/10/20] Preprint of our paper is out on [arXiv](https://arxiv.org/abs/2010.03045v1).
+
+   
+</details>
 
 
 ## Pretrained Models:
