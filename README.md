@@ -1,23 +1,16 @@
-# Rotate to Attend: Convolutional Triplet Attention Module
+<p float="center">
+  <img src ="figures/page-0.jpg"  width="1000"/>
+</p>
 
-<p float="left">
+<p float="center">
   <a href="https://arxiv.org/abs/2010.03045" alt="ArXiv">
         <img src="https://img.shields.io/badge/Preprint-arXiv-blue.svg" /></a>
   <a><img src="https://img.shields.io/badge/WACV-2021-red.svg" /></a>
   <a href="https://landskapeai.github.io/publication/triplet/" alt="Publication">
           <img src="https://img.shields.io/badge/Project-Website-green.svg" /></a>
+  <a href="https://drive.google.com/file/d/16QBttBSHELXowXXWhl0z07pJNiNNGyh2/view?usp=sharing" alt="Publication">
+          <img src="https://img.shields.io/badge/WACV-Slides-yellow.svg" /></a>
 </p>
-
-
-<p float="center">
-  <img src ="figures/page-0.jpg"  width="1000"/>
-</p>
-
-Authors - Diganta Misra <sup>1†</sup>, Trikay Nalamada <sup>1,2†</sup>, Ajay Uppili Arasanipalai <sup>1,3†</sup>, Qibin Hou <sup>4</sup>
-
-1 - [Landskape](https://www.landskape.org/)     2. [IIT Guwahati](http://www.iitg.ac.in/)   3. [University of Illinois, Urbana Champaign](https://illinois.edu/)   4. [National University of Singapore](http://www.nus.edu.sg/)
-
-† - Denotes Equal Contribution
 
 *Abstract - Benefiting from the capability of building inter-dependencies among channels or spatial locations, attention mechanisms have been extensively studied and broadly used in a variety of computer vision tasks recently. In this paper, we investigate light-weight but effective attention mechanisms and present triplet attention, a novel method for computing attention weights by capturing cross-dimension interaction using a three-branch structure. For an input tensor, triplet attention builds inter-dimensional dependencies by the rotation operation followed by residual transformations and encodes inter-channel and spatial information with negligible computational overhead. Our method is simple as well as efficient and can be easily plugged into classic backbone networks as an add-on module. We demonstrate the effectiveness of our method on various challenging tasks including image classification on ImageNet-1k and object detection on MSCOCO and PASCAL VOC datasets. Furthermore, we provide extensive in-sight into the performance of triplet attention by visually inspecting the GradCAM and GradCAM++ results. The empirical evaluation of our method supports our intuition on the importance of capturing dependencies across dimensions when computing attention weights.*
 
