@@ -3,13 +3,20 @@
 </p>
 
 <p float="center">
+  <a href="https://openaccess.thecvf.com/content/WACV2021/html/Misra_Rotate_to_Attend_Convolutional_Triplet_Attention_Module_WACV_2021_paper.html" alt="CVF">
+          <img src="https://img.shields.io/badge/CVF-Page-purple.svg" /></a>
   <a href="https://arxiv.org/abs/2010.03045" alt="ArXiv">
         <img src="https://img.shields.io/badge/Preprint-arXiv-blue.svg" /></a>
-  <a><img src="https://img.shields.io/badge/WACV-2021-red.svg" /></a>
-  <a href="https://landskapeai.github.io/publication/triplet/" alt="Publication">
+  <a href="https://openaccess.thecvf.com/content/WACV2021/papers/Misra_Rotate_to_Attend_Convolutional_Triplet_Attention_Module_WACV_2021_paper.pdf" alt="PDF">
+          <img src="https://img.shields.io/badge/WACV-PDF-neon.svg" /></a>
+  <a href="https://openaccess.thecvf.com/content/WACV2021/supplemental/Misra_Rotate_to_Attend_WACV_2021_supplemental.pdf" alt="Supp">
+          <img src="https://img.shields.io/badge/WACV-Supp-pink.svg" /></a>
+  <a href="https://landskapeai.github.io/publication/triplet/" alt="Project">
           <img src="https://img.shields.io/badge/Project-Website-green.svg" /></a>
-  <a href="https://drive.google.com/file/d/16QBttBSHELXowXXWhl0z07pJNiNNGyh2/view?usp=sharing" alt="Publication">
+  <a href="https://landskapeai.github.io/slides/triplet/#/" alt="Slides">
           <img src="https://img.shields.io/badge/WACV-Slides-yellow.svg" /></a>
+  <a href="https://t.co/cylJBDIKvQ?amp=1" alt="Video">
+          <img src="https://img.shields.io/badge/WACV-Video-maroon.svg" /></a>
 </p>
 
 *Abstract - Benefiting from the capability of building inter-dependencies among channels or spatial locations, attention mechanisms have been extensively studied and broadly used in a variety of computer vision tasks recently. In this paper, we investigate light-weight but effective attention mechanisms and present triplet attention, a novel method for computing attention weights by capturing cross-dimension interaction using a three-branch structure. For an input tensor, triplet attention builds inter-dimensional dependencies by the rotation operation followed by residual transformations and encodes inter-channel and spatial information with negligible computational overhead. Our method is simple as well as efficient and can be easily plugged into classic backbone networks as an add-on module. We demonstrate the effectiveness of our method on various challenging tasks including image classification on ImageNet-1k and object detection on MSCOCO and PASCAL VOC datasets. Furthermore, we provide extensive in-sight into the performance of triplet attention by visually inspecting the GradCAM and GradCAM++ results. The empirical evaluation of our method supports our intuition on the importance of capturing dependencies across dimensions when computing attention weights.*
@@ -204,12 +211,12 @@ optional arguments:
 ## Cite our work:
 
 ```
-@misc{misra2020rotate,
-      title={Rotate to Attend: Convolutional Triplet Attention Module}, 
-      author={Diganta Misra and Trikay Nalamada and Ajay Uppili Arasanipalai and Qibin Hou},
-      year={2020},
-      eprint={2010.03045},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@InProceedings{Misra_2021_WACV,
+    author    = {Misra, Diganta and Nalamada, Trikay and Arasanipalai, Ajay Uppili and Hou, Qibin},
+    title     = {Rotate to Attend: Convolutional Triplet Attention Module},
+    booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {January},
+    year      = {2021},
+    pages     = {3139-3148}
 }
 ```
