@@ -15,7 +15,7 @@
           <img src="https://img.shields.io/badge/Project-Website-green.svg" /></a>
   <a href="https://landskapeai.github.io/slides/triplet/#/" alt="Slides">
           <img src="https://img.shields.io/badge/WACV-Slides-yellow.svg" /></a>
-  <a href="https://t.co/cylJBDIKvQ?amp=1" alt="Video">
+  <a href="https://www.youtube.com/watch?v=t6qJTJXBHq8&feature=youtu.be" alt="Video">
           <img src="https://img.shields.io/badge/WACV-Video-maroon.svg" /></a>
 </p>
 
