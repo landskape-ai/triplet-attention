@@ -1,9 +1,7 @@
 ### For latest triplet_attention module code please refer to the corresponding file in root. 
 
 import torch
-import math
 import torch.nn as nn
-import torch.nn.functional as F
 
 class BasicConv(nn.Module):
     def __init__(self, in_planes, out_planes, kernel_size, stride=1, padding=0, dilation=1, groups=1, relu=True, bn=True, bias=False):
@@ -23,7 +21,7 @@ class BasicConv(nn.Module):
 
 class ChannelPool(nn.Module):
     def forward(self, x):
-        return torch.cat( (torch.max(x,1)[0].unsqueeze(1), torch.mean(x,1).unsqueeze(1)), dim=1 )
+        return torch.cat( (torch.max(x,1)[0].unsqueeze(1), torch.mean(x,1).unsqueeze(1)), dim=1)
 
 class SpatialGate(nn.Module):
     def __init__(self):
