@@ -21,10 +21,10 @@ It also includes fewer abstraction, therefore is easier to add custom logic.
 import logging
 import os
 from collections import OrderedDict
-import torch
-from torch.nn.parallel import DistributedDataParallel
 
 import detectron2.utils.comm as comm
+import torch
+import wandb
 from detectron2.checkpoint import DetectionCheckpointer, PeriodicCheckpointer
 from detectron2.config import get_cfg
 from detectron2.data import (
@@ -48,29 +48,29 @@ from detectron2.evaluation import (
 from detectron2.modeling import build_model
 from detectron2.solver import build_lr_scheduler, build_optimizer
 from detectron2.utils.events import (
-    get_event_storage,
-    EventWriter,
     CommonMetricPrinter,
     EventStorage,
+    EventWriter,
     JSONWriter,
     TensorboardXWriter,
+    get_event_storage,
 )
-
 from MODELS.backbones import *
+from torch.nn.parallel import DistributedDataParallel
 
-import wandb
 
 class WandbWriter(EventWriter):
     def write(self):
         storage = get_event_storage()
 
         log_data = dict()
-        for k,v in storage.histories().items():
+        for k, v in storage.histories().items():
             log_data[k] = v.median(20)
-        log_data['lr'] = storage.history("lr").latest()
-        log_data['iteration'] = storage.iter
-        
+        log_data["lr"] = storage.history("lr").latest()
+        log_data["iteration"] = storage.iter
+
         wandb.log(log_data)
+
 
 logger = logging.getLogger("detectron2")
 
@@ -116,7 +116,9 @@ def get_evaluator(cfg, dataset_name, output_folder=None):
         return LVISEvaluator(dataset_name, cfg, True, output_folder)
     if len(evaluator_list) == 0:
         raise NotImplementedError(
-            "no Evaluator for the dataset {} with the type {}".format(dataset_name, evaluator_type)
+            "no Evaluator for the dataset {} with the type {}".format(
+                dataset_name, evaluator_type
+            )
         )
     if len(evaluator_list) == 1:
         return evaluator_list[0]
@@ -151,7 +153,10 @@ def do_train(cfg, model, resume=False):
         model, cfg.OUTPUT_DIR, optimizer=optimizer, scheduler=scheduler
     )
     start_iter = (
-        checkpointer.resume_or_load(cfg.MODEL.WEIGHTS, resume=resume).get("iteration", -1) + 1
+        checkpointer.resume_or_load(cfg.MODEL.WEIGHTS, resume=resume).get(
+            "iteration", -1
+        )
+        + 1
     )
     max_iter = cfg.SOLVER.MAX_ITER
 
@@ -183,7 +188,9 @@ def do_train(cfg, model, resume=False):
             losses = sum(loss_dict.values())
             assert torch.isfinite(losses).all(), loss_dict
 
-            loss_dict_reduced = {k: v.item() for k, v in comm.reduce_dict(loss_dict).items()}
+            loss_dict_reduced = {
+                k: v.item() for k, v in comm.reduce_dict(loss_dict).items()
+            }
             losses_reduced = sum(loss for loss in loss_dict_reduced.values())
             if comm.is_main_process():
                 storage.put_scalars(total_loss=losses_reduced, **loss_dict_reduced)
@@ -191,7 +198,9 @@ def do_train(cfg, model, resume=False):
             optimizer.zero_grad()
             losses.backward()
             optimizer.step()
-            storage.put_scalar("lr", optimizer.param_groups[0]["lr"], smoothing_hint=False)
+            storage.put_scalar(
+                "lr", optimizer.param_groups[0]["lr"], smoothing_hint=False
+            )
             scheduler.step()
 
             if (
@@ -203,7 +212,9 @@ def do_train(cfg, model, resume=False):
                 # Compared to "train_net.py", the test results are not dumped to EventStorage
                 comm.synchronize()
 
-            if iteration - start_iter > 5 and (iteration % 20 == 0 or iteration == max_iter):
+            if iteration - start_iter > 5 and (
+                iteration % 20 == 0 or iteration == max_iter
+            ):
                 for writer in writers:
                     writer.write()
             periodic_checkpointer.step(iteration)
@@ -225,8 +236,8 @@ def setup(args):
 
 def main(args):
     cfg = setup(args)
-    
-    wandb.init(project='triplet_attention-detection')
+
+    wandb.init(project="triplet_attention-detection")
 
     model = build_model(cfg)
     # wandb.watch(model)

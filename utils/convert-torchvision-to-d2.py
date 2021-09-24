@@ -3,6 +3,7 @@
 
 import pickle as pkl
 import sys
+
 import torch
 
 """
@@ -37,7 +38,8 @@ if __name__ == "__main__":
     newmodel = {}
     for k in list(obj.keys()):
         old_k = k
-        if (k.startswith('module')): k = k[7:]
+        if k.startswith("module"):
+            k = k[7:]
         if "layer" not in k:
             k = "stem." + k
         for t in [1, 2, 3, 4]:

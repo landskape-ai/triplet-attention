@@ -1,27 +1,30 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 import fvcore.nn.weight_init as weight_init
+import MODELS.triplet_attention
 import torch
 import torch.nn.functional as F
-from torch.nn import init
-
-from detectron2.layers import Conv2d, FrozenBatchNorm2d, get_norm
-from detectron2.modeling import BACKBONE_REGISTRY, ResNet, ResNetBlockBase, make_stage
-from detectron2.modeling import *
-from detectron2.modeling.backbone.resnet import BasicStem, BottleneckBlock, DeformBottleneckBlock
-from detectron2.modeling.backbone.resnet import *
-from detectron2.modeling.backbone.fpn import LastLevelMaxPool, LastLevelP6P7
-from detectron2.modeling.backbone.fpn import *
 from detectron2.layers import (
     CNNBlockBase,
     Conv2d,
     DeformConv,
+    FrozenBatchNorm2d,
     ModulatedDeformConv,
     ShapeSpec,
     get_norm,
 )
-
-import MODELS.triplet_attention
+from detectron2.modeling import *
+from detectron2.modeling import BACKBONE_REGISTRY, ResNet, ResNetBlockBase, make_stage
+from detectron2.modeling.backbone.fpn import *
+from detectron2.modeling.backbone.fpn import LastLevelMaxPool, LastLevelP6P7
+from detectron2.modeling.backbone.resnet import *
+from detectron2.modeling.backbone.resnet import (
+    BasicStem,
+    BottleneckBlock,
+    DeformBottleneckBlock,
+)
 from MODELS.triplet_attention import *
+from torch.nn import init
+
 
 class TripletAttentionBasicBlock(CNNBlockBase):
     """
@@ -77,7 +80,7 @@ class TripletAttentionBasicBlock(CNNBlockBase):
         # weight initialization
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
-                nn.init.kaiming_normal_(m.weight, mode='fan_out')
+                nn.init.kaiming_normal_(m.weight, mode="fan_out")
                 if m.bias is not None:
                     nn.init.zeros_(m.bias)
             elif isinstance(m, nn.BatchNorm2d):
@@ -192,7 +195,7 @@ class TripletAttentionBottleneckBlock(CNNBlockBase):
         # weight initialization
         for m in self.modules():
             if isinstance(m, nn.Conv2d):
-                nn.init.kaiming_normal_(m.weight, mode='fan_out')
+                nn.init.kaiming_normal_(m.weight, mode="fan_out")
                 if m.bias is not None:
                     nn.init.zeros_(m.bias)
             elif isinstance(m, nn.BatchNorm2d):
@@ -206,7 +209,6 @@ class TripletAttentionBottleneckBlock(CNNBlockBase):
         for layer in [self.conv1, self.conv2, self.shortcut]:
             if layer is not None:  # shortcut can be None
                 weight_init.c2_msra_fill(layer)
-
 
         # Zero-initialize the last normalization in each residual branch,
         # so that at the beginning, the residual branch starts with zeros,
@@ -241,7 +243,9 @@ class TripletAttentionBottleneckBlock(CNNBlockBase):
         return out
 
 
-def make_stage(block_class, num_blocks, first_stride, *, in_channels, out_channels, **kwargs):
+def make_stage(
+    block_class, num_blocks, first_stride, *, in_channels, out_channels, **kwargs
+):
 
     """
     Create a list of blocks just like those in a ResNet stage.
@@ -311,18 +315,24 @@ def build_resnet_triplet_attention_backbone(cfg, input_shape):
     }[depth]
 
     if depth in [18, 34]:
-        assert out_channels == 64, "Must set MODEL.RESNETS.RES2_OUT_CHANNELS = 64 for R18/R34"
+        assert (
+            out_channels == 64
+        ), "Must set MODEL.RESNETS.RES2_OUT_CHANNELS = 64 for R18/R34"
         assert not any(
             deform_on_per_stage
         ), "MODEL.RESNETS.DEFORM_ON_PER_STAGE unsupported for R18/R34"
-        assert res5_dilation == 1, "Must set MODEL.RESNETS.RES5_DILATION = 1 for R18/R34"
+        assert (
+            res5_dilation == 1
+        ), "Must set MODEL.RESNETS.RES5_DILATION = 1 for R18/R34"
         assert num_groups == 1, "Must set MODEL.RESNETS.NUM_GROUPS = 1 for R18/R34"
 
     stages = []
 
     # Avoid creating variables without gradients
     # It consumes extra memory and may cause allreduce to fail
-    out_stage_idx = [{"res2": 2, "res3": 3, "res4": 4, "res5": 5}[f] for f in out_features]
+    out_stage_idx = [
+        {"res2": 2, "res3": 3, "res4": 4, "res5": 5}[f] for f in out_features
+    ]
     max_stage_idx = max(out_stage_idx)
     for idx, stage_idx in enumerate(range(2, max_stage_idx + 1)):
         dilation = res5_dilation if stage_idx == 5 else 1
@@ -342,11 +352,11 @@ def build_resnet_triplet_attention_backbone(cfg, input_shape):
             stage_kargs["stride_in_1x1"] = stride_in_1x1
             stage_kargs["dilation"] = dilation
             stage_kargs["num_groups"] = num_groups
-            #if deform_on_per_stage[idx]:
+            # if deform_on_per_stage[idx]:
             #    stage_kargs["block_class"] = DeformBottleneckBlock
             #    stage_kargs["deform_modulated"] = deform_modulated
             #    stage_kargs["deform_num_groups"] = deform_num_groups
-            #else:
+            # else:
             stage_kargs["block_class"] = TripletAttentionBottleneckBlock
         blocks = make_stage(**stage_kargs)
         in_channels = out_channels
@@ -393,7 +403,11 @@ class TripletAttentionRes5ROIHeads(ROIHeads):
         if self.mask_on:
             self.mask_head = build_mask_head(
                 cfg,
-                ShapeSpec(channels=out_channels, width=pooler_resolution, height=pooler_resolution),
+                ShapeSpec(
+                    channels=out_channels,
+                    width=pooler_resolution,
+                    height=pooler_resolution,
+                ),
             )
 
     def _build_res5_block(self, cfg):
