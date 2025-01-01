@@ -211,7 +211,6 @@ class ResNet(nn.Module):
 
 
 def ResidualNet(network_type, depth, num_classes, att_type):
-
     assert network_type in [
         "ImageNet",
         "CIFAR10",

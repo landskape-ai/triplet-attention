@@ -1,11 +1,7 @@
 import wandb
-from detectron2.utils.events import (
-    CommonMetricPrinter,
-    EventStorage,
-    EventWriter,
-    JSONWriter,
-    TensorboardXWriter,
-)
+from detectron2.utils.events import (CommonMetricPrinter, EventStorage,
+                                     EventWriter, JSONWriter,
+                                     TensorboardXWriter)
 
 
 class WandbWriter(EventWriter):

@@ -27,36 +27,23 @@ import torch
 import wandb
 from detectron2.checkpoint import DetectionCheckpointer, PeriodicCheckpointer
 from detectron2.config import get_cfg
-from detectron2.data import (
-    MetadataCatalog,
-    build_detection_test_loader,
-    build_detection_train_loader,
-)
+from detectron2.data import (MetadataCatalog, build_detection_test_loader,
+                             build_detection_train_loader)
 from detectron2.engine import default_argument_parser, default_setup, launch
-from detectron2.evaluation import (
-    CityscapesInstanceEvaluator,
-    CityscapesSemSegEvaluator,
-    COCOEvaluator,
-    COCOPanopticEvaluator,
-    DatasetEvaluators,
-    LVISEvaluator,
-    PascalVOCDetectionEvaluator,
-    SemSegEvaluator,
-    inference_on_dataset,
-    print_csv_format,
-)
+from detectron2.evaluation import (CityscapesInstanceEvaluator,
+                                   CityscapesSemSegEvaluator, COCOEvaluator,
+                                   COCOPanopticEvaluator, DatasetEvaluators,
+                                   LVISEvaluator, PascalVOCDetectionEvaluator,
+                                   SemSegEvaluator, inference_on_dataset,
+                                   print_csv_format)
 from detectron2.modeling import build_model
 from detectron2.solver import build_lr_scheduler, build_optimizer
-from detectron2.utils.events import (
-    CommonMetricPrinter,
-    EventStorage,
-    EventWriter,
-    JSONWriter,
-    TensorboardXWriter,
-    get_event_storage,
-)
-from MODELS.backbones import *
+from detectron2.utils.events import (CommonMetricPrinter, EventStorage,
+                                     EventWriter, JSONWriter,
+                                     TensorboardXWriter, get_event_storage)
 from torch.nn.parallel import DistributedDataParallel
+
+from MODELS.backbones import *
 
 
 class WandbWriter(EventWriter):

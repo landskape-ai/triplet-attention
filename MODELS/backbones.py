@@ -1,29 +1,22 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
 import fvcore.nn.weight_init as weight_init
-import MODELS.triplet_attention
 import torch
 import torch.nn.functional as F
-from detectron2.layers import (
-    CNNBlockBase,
-    Conv2d,
-    DeformConv,
-    FrozenBatchNorm2d,
-    ModulatedDeformConv,
-    ShapeSpec,
-    get_norm,
-)
+from detectron2.layers import (CNNBlockBase, Conv2d, DeformConv,
+                               FrozenBatchNorm2d, ModulatedDeformConv,
+                               ShapeSpec, get_norm)
 from detectron2.modeling import *
-from detectron2.modeling import BACKBONE_REGISTRY, ResNet, ResNetBlockBase, make_stage
+from detectron2.modeling import (BACKBONE_REGISTRY, ResNet, ResNetBlockBase,
+                                 make_stage)
 from detectron2.modeling.backbone.fpn import *
 from detectron2.modeling.backbone.fpn import LastLevelMaxPool, LastLevelP6P7
 from detectron2.modeling.backbone.resnet import *
-from detectron2.modeling.backbone.resnet import (
-    BasicStem,
-    BottleneckBlock,
-    DeformBottleneckBlock,
-)
-from MODELS.triplet_attention import *
+from detectron2.modeling.backbone.resnet import (BasicStem, BottleneckBlock,
+                                                 DeformBottleneckBlock)
 from torch.nn import init
+
+import MODELS.triplet_attention
+from MODELS.triplet_attention import *
 
 
 class TripletAttentionBasicBlock(CNNBlockBase):
@@ -246,7 +239,6 @@ class TripletAttentionBottleneckBlock(CNNBlockBase):
 def make_stage(
     block_class, num_blocks, first_stride, *, in_channels, out_channels, **kwargs
 ):
-
     """
     Create a list of blocks just like those in a ResNet stage.
     Args:
